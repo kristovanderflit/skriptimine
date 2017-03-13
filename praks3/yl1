@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# täisnurk kolmnurk
+#
+# loome muutujat nii ,et kasutajad sisestavad väärtused ise
+echo -n "Sisesta a külje väärtus: "
+read a # sellega tekkib a muutuja, mille sisse on salvestatud kasutaja sisestatud väärtus
+echo -n "Sisesta b külje väärtus: "
+read b
+# arvutused
+# c = sqrt(a^2 + b^2)
+c=$(echo "scale=2;sqrt($a^2 + $b^2)" | bc) # bc arvutusvalem
+echo "c = $c"
