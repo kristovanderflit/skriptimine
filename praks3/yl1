@@ -1,13 +1,17 @@
 #!/bin/bash
 #
-# täisnurk kolmnurk
+# kolmnurga pindala Heroni valemi abil
 #
 # loome muutujat nii ,et kasutajad sisestavad väärtused ise
 echo -n "Sisesta a külje väärtus: "
 read a # sellega tekkib a muutuja, mille sisse on salvestatud kasutaja sisestatud väärtus
 echo -n "Sisesta b külje väärtus: "
 read b
+echo -n "Sisesta c külje väärtus: "
+read c
 # arvutused
-# c = sqrt(a^2 + b^2)
-c=$(echo "scale=2;sqrt($a^2 + $b^2)" | bc) # bc arvutusvalem
-echo "c = $c"
+# p = (a + b + c)/2
+p=$(echo "scale=2;($a + $b + $c)/2" | bc)
+# s = sqrt(p(p - a)(p - b)(p - c))
+s=$(echo "scale=2;sqrt($p * ($p - $a) * ($p - $b) * ($p - $c))" | bc)
+echo "pindala = $s"
