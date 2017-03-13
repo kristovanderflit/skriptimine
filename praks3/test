@@ -1,0 +1,15 @@
+#!/bin/bash
+#
+# kolmnurga pindala Heroni valemi abil
+#
+# loome muutujat nii ,et kasutajad sisestavad väärtused ise
+echo -n "Sisesta eesnimi perenimi: "
+read a # sellega tekkib a muutuja, mille sisse on salvestatud kasutaja sisestatud väärtus
+echo -n "Sisesta oma pikkus meetrites: "
+read b
+echo -n "Sisesta oma mass kg-des: "
+read c
+# arvutused
+# p = c/   (b^2)
+p=$(echo "scale=2;($c / $b^2)" | bc )
+echo "Sinu kehamassiindeks on = $p"
