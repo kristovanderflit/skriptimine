@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+# kella ja kuupäeva väljastamine
+#
+kuupaev=$(date +"%A, %b %d, %Y")
+kell=$(date +"%H:%M")
+echo "Today is $kuupaev"
+echo # tühi rida
+echo "Time is $kell"
+echo
+# jälle vajalik muutaja
+kuu=$(date +"%B %Y")
+echo "Calendar of $kuu"
+echo "=========================="
+# kalendri muutaja
+cal | tail -n 7
+echo "======================="
