@@ -2,7 +2,7 @@
 #
 # kella ja kuupäeva väljastamine
 #
-kuupaev=$(date +"%A, %b %d, %Y")
+kuupaev=$(date +"%A, %B %d, %Y")
 kell=$(date +"%H:%M")
 echo "Today is $kuupaev"
 echo # tühi rida
