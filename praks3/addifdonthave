@@ -1,0 +1,4 @@
+git remote -v
+git remote rename origin skriptimine
+
+ja siis kenasti laadib.
