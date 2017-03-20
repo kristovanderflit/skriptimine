@@ -8,14 +8,16 @@ echo -n "Sisesta suvaline täisarv: "
 read arv
 # if lause algus
 # kontrollimie, kas arv on positiivne
-if [ $arv -ge 0 ]
-then
+if [ $arv -gt 0 ]; then
 	#arv on positiivne
 	echo "$arv on positiivne"
-# muidu
-else 
+# muidu kui arv  on väiksem kui 0 negatiivne
+elif [ $arv -lt 0 ]; then
 	# arv on negatiivne
 	echo "$arv on negatiivne"
+#kui ei ole suurem ega väiksem kui 0
+else
+	echo "$arv on neutraalne"
 # if lause lõpp
 fi
 echo "programmi lõpp"
