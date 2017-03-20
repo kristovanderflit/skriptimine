@@ -1,11 +1,7 @@
 #!/bin/bash
 #
-#
-# arvu paarsuse kontroll
-#
-# lubame kasutajale sisestada arvu väärtus
-echo -n "Sisesta suvaline täisarv: "
-read arv
+# kasuta käsurealised parameetrid arvude sisetamiseks
+arv=$1
 # if lause algus
 # kontrollimie, kas arv on positiivne
 if [ $arv -gt 0 ]; then
