@@ -1,4 +1,6 @@
-git remote -v
-git remote rename origin skriptimine
+#!/bin/bash
+#
+# git remote -v
+# git remote rename origin skriptimine
 
-ja siis kenasti laadib.
+# ja siis kenasti laadib.
