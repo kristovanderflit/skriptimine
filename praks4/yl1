@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# andmed
+# kehamassiindeks arvutamine
 #
 #
 echo -n "Sisesta eesnimi ja perenimi: "
@@ -12,6 +12,27 @@ read h
 # arvutame oma kehamassi indeksi
 # i = m / h^2
 i=$(echo "scale=2;$m/$h^2" | bc)
-#väljastamine
-echo "$eesnimi $perenimi,"
-echo "Teie kehamassiindeks on $i"
+# kasutaja andmed
+echo "Tere $eesnimi $perenimi,"
+echo "Teie kehamassiindesk on $i"
+# erinevad väljundid
+alakaal_t=$(echo "$i < 19" | bc)
+normaal_t=$(echo "$i >= 19 && $i < 25" | bc)
+ulekaal_t=$(echo "$i >= 25 && $i < 30" | bc)
+rasvumine_t=$(echo "$i >= 30" | bc)
+# alakaal
+if [ $alakaal_t  -eq 1 ]; then
+	echo "ALAKAAL"
+	echo "ALAKAAl on väga ohtlik"
+# noormalkaal
+elif [ $normaal_t -eq 1 ]; then
+	echo "NORMAALKAAL"
+# ülekaaal
+elif [ $ulekaal_t -eq 1 ]; then
+	echo "ÜLEKAAL"
+#rasvumine
+elif [ $rasvumine_t -eq 1 ]; then
+	echo "rasvumine"
+ else
+	echo "Probleem skripti kasutamisega"
+fi
