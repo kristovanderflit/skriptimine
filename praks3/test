@@ -1,15 +1,33 @@
 #!/bin/bash
 #
-# kolmnurga pindala Heroni valemi abil
-#
-# loome muutujat nii ,et kasutajad sisestavad väärtused ise
-echo -n "Sisesta eesnimi perenimi: "
-read a # sellega tekkib a muutuja, mille sisse on salvestatud kasutaja sisestatud väärtus
-echo -n "Sisesta oma pikkus meetrites: "
-read b
-echo -n "Sisesta oma mass kg-des: "
-read c
-# arvutused
-# p = c/   (b^2)
-p=$(echo "scale=2;($c / $b^2)" | bc )
-echo "Sinu kehamassiindeks on = $p"
+# kasuta käsurealised parameetrid arvude sisetamiseks
+# kontrollime, kas parameetrite arv on 1
+# kui nii ei ole
+if [ $# -ne 1 ]; then
+	echo "kasutusjuhend: "
+	echo "$0 arv"
+	echo "Näiteks: $0 -5"
+#muidu kui kasutaja sisestab üks parammeeter
+else 
+ arv=$1
+if ! [[ $arv =~ ^[-+]?[0-9]+$ ]]; then
+	echo "Tekst ei ole võimalik sisestada"
+# if lause algus
+# kontrollimie, kas arv on positiivne
+else
+ if [ $arv -gt 0 ]; then
+	#arv on positiivne
+	echo "$arv on positiivne"
+# muidu kui arv  on väiksem kui 0 negatiivne
+ elif [ $arv -lt 0 ]; then
+	# arv on negatiivne
+	echo "$arv on negatiivne"
+#kui ei ole suurem ega väiksem kui 0
+ else
+	echo "$arv on neutraalne"
+# if lause lõpp
+ fi
+# numbri või teksti kontrolli lõpp
+fi
+# välise if  lause lõpp
+fi
