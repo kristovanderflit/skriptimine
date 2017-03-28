@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+#numbrite väljastamine ja summeerimine
+#
+summa=0
+for((n = 1; n <=5 ; n++))
+do
+ echo -n $n
+ summa=$((summa + $n))
+ echo " summa = $summa"
+done
+ echo "arvude summa on $summa"
