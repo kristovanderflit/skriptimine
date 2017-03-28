@@ -1,0 +1,11 @@
+#!/bin/bash
+n=1
+summa=0
+echo -n "Arvude "
+while [ $n -le 5 ]
+do
+ echo -n "$n "
+ summa=$(($summa + $n))
+ n=$(($n+1))
+done
+ echo "$n summa on $summa"
