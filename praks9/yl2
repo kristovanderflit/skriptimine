@@ -1,0 +1,15 @@
+#!/bin/bash
+#
+#
+#
+while read rida
+do
+ #loeme iga rida : märkidega
+ # ja teisendamie selle nii, et rida olkes tühikutega
+ rida=$(echo $rida | sed 's/:/ /g')
+ #tühikutega roda pn lihtne  sõnadeks lõigata fpr tsükliga
+ for sona in $rida
+ do
+ echo $sona #tsükime iga sõna välja
+ done
+done < fail
