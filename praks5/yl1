@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+#
+if [ $# -ne 1 ]
+then
+	echo "kasutusjuhend: $failinimi"
+	echo "Näiteks: $0 test.txt"
+ exit 1
+else
+ failinimi=$1
+ touch $failinimi
+ exit 0	
+fi
