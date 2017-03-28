@@ -1,0 +1,15 @@
+#!/bin/bash
+#
+#
+# määrame, kui palju kokku alguses sõnu
+
+kokku=0
+echo -n "Sisesta lause: "
+read lause
+
+for sona in $lause
+do
+ echo $sona
+ kokku=$(($kokku + 1))
+done
+ echo "Lause koosneb $kokku sõnast"
