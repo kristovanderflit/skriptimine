@@ -1,11 +1,18 @@
 #!/bin/bash
 #
-summa=0
-k=1
-while [ $k -le 5 ]
+summa=0    #määrame summa algväärtust
+read -p  "Sisesta number: " n
+#loeme sisestatud korrad
+k=0
+while [ -n "$n" ]
 do
- read -p "sisesta $k. number: " n
  summa=$(($summa + $n))
- k=$(($k + 1))
+ echo "jooksev summa on $summa"
+ echo "kui soovid jätkata, sisesta väärtus"
+ echo "peatamisesk vajuta lihtsalt enter"
+ read -p "sisesta : " n
+ k=$(($k + 1)) # suurendame lugemiskord ühe võrra
+ clear
 done
  echo "arvude summa on $summa"
+ echo "kokku sisestaasid arvud $k korda"
