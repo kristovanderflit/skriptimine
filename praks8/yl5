@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+summa=0
+k=1
+while [ $k -le 5 ]
+do
+ read -p "sisesta $k. number: " n
+ summa=$(($summa + $n))
+ k=$(($k + 1))
+done
+ echo "arvude summa on $summa"
