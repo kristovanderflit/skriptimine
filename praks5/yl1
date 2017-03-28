@@ -8,6 +8,31 @@ then
  exit 1
 else
  failinimi=$1
+# komtrollimine antud nimega faili olemasoli
+if [ -f $failinimi ]; then
+ echo "fail $failinimi on juba olemas"
+#kontrollimine kas fail on tühi või mitte
+# operator ! perevora4ivaet peremennnuju 
+if ! [ -s $failinimi ]; then
+ echo "antud fail on tühi"
+else
+ echo "antud fail ei ole tühi"
+ fi
+ echo "Kui ei soovi ümber kirjutada"
+ read -p "sisesta failinimi: " uusnimi
+fi
+# lisame uue faili nimi kontrolli
+ if [ -n "$uusnimi" ]; then
+  failinimi=$uusnimi
+ fi
  touch $failinimi
- exit 0	
+# kui eelmine käsk - touch nimi on ok - $? on 0
+ if [ $? -eq 0  ]; then
+ echo "Fail $failinimi on loodud"
+ exit 0
+ else
+ echo " Failiga $failinimi on probleem"
+ 
+ exit 1	
+ fi
 fi
