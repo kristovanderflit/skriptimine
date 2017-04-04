@@ -1,0 +1,27 @@
+#!/bin/bash
+#
+# Kristo Vanderflit
+# Skripti nimi menu
+# Skript väljastab menu kolmest valikust
+# Teeme et saaks valida 1 või 2 või 3
+read -p "Please give a number (1 or 2 or 3): "  b
+
+# valik esimene
+if [ $b -eq 1 ];then
+	echo "Stick to your ribs."
+	echo "Watch your cholesterol."
+	echo "Enjoy your meal!"
+# kui valib teine
+elif [ $b -eq 2 ];then
+	echo "British are coming!"
+	echo "Enjoy yout meal!"
+# kui valik on kolmas
+elif [ $b -eq 3 ];then
+	echo "Healt foods..."
+	echo "Dieting is so boring."
+	echo "Enjoy yout meal!"
+# kui ei olnud vajutatud number siis tuleb see teade
+else [ -z "$b" ];
+	echo "Palun sisesta number !!! 1 või 2 või 3"
+fi
+
