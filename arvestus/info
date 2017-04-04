@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+# Kristo Vanderflit
+# skripti nimi info
+# Skript tervitab sisselogitud kasutajat
+echo -n "Tere, "
+echo -n `whoami`
+echo "!"
+# Vajutame ENTER klahvi
+echo -n "Vajutage ENTER klahvi!!!"
+read a
+# Teeme muutujad kuupäev ja kellaeg
+kuupaev=$(date +"%d.%m.%Y")
+kell=$(date +"%H:%M")
+# väljastame tänane kuupäev ja kellaaeg
+echo "Täna on $kuupaev kell $kell"
+# väljastame selle kuu kalendrit
+cal
+#
+# skripti lõpp
