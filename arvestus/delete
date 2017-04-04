@@ -1,0 +1,24 @@
+#!/bin/bash
+#
+# Kristo Vanderflit
+# Skript delete
+# Skript kontrollib ja kustutab faili 
+#
+ echo "Sisestage faili nimi: "
+read a # muutuja a
+# kontrollime operaatoriga !  ja -f
+if [ ! -f $a ]
+then
+ echo "Sellist faili ei ole"
+ echo "Sisestage uus fail"
+ echo "Faili nimi ei tohi olla tühi !!! "
+else
+ 
+echo "Fail on olemas ja kustutame kohe ära"
+echo "Fail on kustutatud"
+fi
+# et kustuda faili ära
+rm -rf $a
+# kontrollib ls et kaustas fail on kustatud
+ls
+
